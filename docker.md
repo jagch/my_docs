@@ -31,6 +31,11 @@
       - [verify login (if there are something, you are login)](#verify-login-if-there-are-something-you-are-login)
       - [retag a image to upload to repository](#retag-a-image-to-upload-to-repository)
       - [upload an image](#upload-an-image)
+  - [network](#network)
+    - [listing networks](#listing-networks)
+    - [create network](#create-network)
+    - [inspect](#inspect)
+    - [add container to network](#add-container-to-network)
 
 
 ## list active containers
@@ -150,6 +155,22 @@ They are used when we don't need persist data, it is located in memory and docke
 
 #### upload an image
 ```docker push <username>/<image>:<tag>```
+
+## network
+
+### listing networks
+```docker network ls```
+
+### create network
+```docker network create --atachable mynet```
+
+### inspect
+```docker inspect mynet```
+
+### add container to network
+```docker run -d -name mydb mongo```
+
+```docker network connect mynet mydb```
 
 
 
