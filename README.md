@@ -1,2 +1,2 @@
-# my_docs
+# My Docs
 Personal documentation about all.
