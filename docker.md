@@ -1,10 +1,14 @@
 # docker
 
 - [docker](#docker)
+  - [Dockerfile](#dockerfile)
   - [list active containers](#list-active-containers)
   - [list all containers](#list-all-containers)
   - [interactive](#interactive)
   - [delete / delete force container](#delete--delete-force-container)
+  - [delete all inactives containers](#delete-all-inactives-containers)
+  - [delete all containers(active and inactives)](#delete-all-containersactive-and-inactives)
+  - [delete everything that is not active](#delete-everything-that-is-not-active)
   - [bind mounts](#bind-mounts)
     - [risks](#risks)
     - [example with mongo](#example-with-mongo)
@@ -36,7 +40,11 @@
     - [create network](#create-network)
     - [inspect](#inspect)
     - [add container to network](#add-container-to-network)
+  - [memory](#memory)
+  - [view resources in memory of containers](#view-resources-in-memory-of-containers)
 
+## Dockerfile
+Create a file with name ```Dockerfile``` in the project.
 
 ## list active containers
 ```docker ps```
@@ -57,6 +65,15 @@ t: open terminal
 
 ```docker rm -f <name of container>```
 
+## delete all inactives containers
+```docker container prune```
+
+## delete all containers(active and inactives)
+```docker rm -f $(docker ps -aq)```
+
+## delete everything that is not active
+```docker system prune```
+
 ## bind mounts
 ```docker run -d --name <name to container> -v <path in my machine>:<path dest> <name of container>```
 
@@ -73,7 +90,7 @@ Provide access to a portion of the host machine's disk.
 ```docker volume ls```
 
 ## mount volume (recommended)
-Asign a volume previously created of my host SO to a mongo container
+Asign a volume previously created of my host SO to a mongo container.
 
 ```docker run -d --name db --mount src=<name of volume>,dst=/data/db mongo```
 
@@ -110,7 +127,7 @@ Asign a volume previously created of my host SO to a mongo container
 ```:/# exit```
 
 ## extract directory from a container
-It is not necessary that the container is running to execute ```docker copy```
+It is not necessary that the container is running to execute ```docker copy```.
 
 ```docker cp <name of container>:<path of directory> <name of new dest directory in my host>```
 
@@ -172,7 +189,11 @@ They are used when we don't need persist data, it is located in memory and docke
 
 ```docker network connect mynet mydb```
 
+## memory
+```docker run -d -name app --memory 1g myapp```
 
+## view resources in memory of containers
+```dockers stats```
 
 
 
