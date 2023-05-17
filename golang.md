@@ -23,7 +23,12 @@
     $ go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.2
    ```
 
-2. Tip: https://stackoverflow.com/questions/56287808/can-not-compile-proto-file-in-ubuntu-for-golang/56293038#56293038
+2. Update your PATH so that the protoc compiler can find the plugins:
+   ```ssh
+    $ export PATH="$PATH:$(go env GOPATH)/bin"
+   ```
+
+3. Tip: https://stackoverflow.com/questions/56287808/can-not-compile-proto-file-in-ubuntu-for-golang/56293038#56293038
    
    zsh: command not found: protoc indicates that protoc is not installed on your machine. To do so, you need to download binary from Official Releases, as you are on an ubuntu machine, I suggest you download protoc-3.7.1-linux-x86_64.zip (This is latest protoc at the time of writing this answer, you should check on the releases and download latest version)
 
