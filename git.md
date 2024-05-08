@@ -1,6 +1,7 @@
 - [Add new credential and erase old credential](#add-new-credential-and-erase-old-credential)
 - [To checkout to remote branch, you will need to fetch the contents of the branch using](#to-checkout-to-remote-branch-you-will-need-to-fetch-the-contents-of-the-branch-using)
 - [Para configurar GitLab con SSH en Ubuntu, sigue estos pasos:](#para-configurar-gitlab-con-ssh-en-ubuntu-sigue-estos-pasos)
+- [Git merge reports "Already up-to-date" though there is a difference](#git-merge-reports-already-up-to-date-though-there-is-a-difference)
     - [Solution:](#solution)
 
 # Add new credential and erase old credential
@@ -66,14 +67,13 @@ git checkout RemoteBranchName
 
 7. **Probar la conexión SSH:** Puedes probar si la configuración de SSH funciona correctamente ejecutando el siguiente comando:
 
-   ```bash
-   ssh -T git@gitlab.com
-   ```
+    ```bash
+    ssh -T git@gitlab.com
+    ```
 
    Si estás utilizando una instancia local de GitLab, reemplaza `gitlab.com` con la URL correspondiente. Deberías recibir un mensaje de confirmación de que la autenticación fue exitosa.
 
 Ahora, GitLab en tu sistema Ubuntu debería estar configurado para usar SSH para la autenticación, lo que te permitirá clonar, empujar y tirar repositorios de GitLab sin necesidad de ingresar tu contraseña cada vez.
-```
 
 # Git merge reports "Already up-to-date" though there is a difference
 
