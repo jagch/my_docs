@@ -3,6 +3,7 @@
 - [Para configurar GitLab con SSH en Ubuntu, sigue estos pasos:](#para-configurar-gitlab-con-ssh-en-ubuntu-sigue-estos-pasos)
 - [Git merge reports "Already up-to-date" though there is a difference](#git-merge-reports-already-up-to-date-though-there-is-a-difference)
     - [Solution:](#solution)
+    - [Tips](#tips)
 
 # Add new credential and erase old credential
 
@@ -120,3 +121,16 @@ git push --force origin master
 ```
 
 in order to force changes back to the central repo.
+
+### Tips
+
+1. 
+It's equivalent
+```bash
+git commit -am "first commit
+```
+to
+```bash
+git add .
+git commit -m "first commit"
+```
