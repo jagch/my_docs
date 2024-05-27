@@ -1,14 +1,46 @@
-- [Add new credential and erase old credential](#add-new-credential-and-erase-old-credential)
+- [Tool open source to manage git](#tool-open-source-to-manage-git)
+- [Tool to view in order the explain about a command](#tool-to-view-in-order-the-explain-about-a-command)
+- [Link remote repository with local repository](#link-remote-repository-with-local-repository)
+- [Credentials](#credentials)
+  - [Add name of the author](#add-name-of-the-author)
+  - [Add email of the author](#add-email-of-the-author)
+  - [Erase old credentials](#erase-old-credentials)
 - [To checkout to remote branch, you will need to fetch the contents of the branch using](#to-checkout-to-remote-branch-you-will-need-to-fetch-the-contents-of-the-branch-using)
 - [Para configurar GitLab con SSH en Ubuntu, sigue estos pasos:](#para-configurar-gitlab-con-ssh-en-ubuntu-sigue-estos-pasos)
 - [Git merge reports "Already up-to-date" though there is a difference](#git-merge-reports-already-up-to-date-though-there-is-a-difference)
     - [Solution:](#solution)
-    - [Tips](#tips)
+- [Commands](#commands)
 
-# Add new credential and erase old credential
+# Tool open source to manage git
+sourcetree
 
+# Tool to view in order the explain about a command
+tldr https://tldr.sh/
+
+# Link remote repository with local repository
 ```bash
-git config --global user.email '<git-commit-address>'
+git remote add origin git@github.com:username/proyectName.git
+
+git push origin master
+
+```
+-origin: name of repository
+-master: main branch
+
+# Credentials
+
+## Add name of the author
+```bash
+git config --global user.name 'jose guzman'
+```
+
+## Add email of the author
+```bash
+git config --global user.email 'jalfred.076@gmail.com'
+```
+
+## Erase old credentials
+```bash
 git config --global --unset credential.helper
 ```
 # To checkout to remote branch, you will need to fetch the contents of the branch using 
@@ -122,15 +154,43 @@ git push --force origin master
 
 in order to force changes back to the central repo.
 
-### Tips
+# Commands
 
 1. 
 It's equivalent
 ```bash
-git commit -am "first commit
-```
-to
-```bash
+# create a branch
+git branch branchName
+
+# change to branch with name branchName
+git checkout branchName
+
+# show status
+git status
+
+# add changes from all files to stage state
 git add .
-git commit -m "first commit"
+
+# add changes from file with name fileName
+git add ./path/fileName
+
+# git add & git commit
+git commit -am "first commit"
+
+# list stashes
+git stash list
+
+# pop stash with identifier 2 from the list
+git stash pop 2
+
+# show logs of the current branch
+git log
+
+# revert a commit 
+git revert d6cd1e2bd19e03a81132a23b2025920577f84e37
+
+# 
+
+
 ```
+
